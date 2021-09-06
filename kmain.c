@@ -5,6 +5,7 @@
     #include "interrupts.h"
     #include "keyboard.h"
     #include "multiboot.h"
+    #include "paging.h"
 
 
     
@@ -51,6 +52,11 @@ int kmain(unsigned int ebx)
 	
 	/* call user mode */
 	run_user_mode(ebx);
+	
+	init_paging();
+	/* test page fault 	
+	unsigned int *ptr = (unsigned int*)0xA0000000;
+   	unsigned int do_page_fault = *ptr;*/
     	
 	return 0;
 }
