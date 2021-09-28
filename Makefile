@@ -1,4 +1,4 @@
-    OBJECTS = loader.o kmain.o common.o paging.o drivers/io.o drivers/frame_buffer.o drivers/serial_port.o segmentation/gdt.o keyboard.o idt.o segmentation/memory_segments.o interrupt_handlers.o paging_enable.o kheap.o interrupts.o pic.o
+    OBJECTS = loader.o kmain.o common.o paging.o drivers/io.o drivers/frame_buffer.o drivers/serial_port.o segmentation/gdt.o keyboard.o idt.o segmentation/memory_segments.o interrupt_handlers.o paging_enable.o kheap.o interrupts.o pic.o hardware_interrupt_enabler.o  user_mode.o
     CC = gcc
     CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector \
              -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c

@@ -6,6 +6,9 @@
     #include "keyboard.h"
     #include "multiboot.h"
     #include "paging.h"
+    #include "hardware_interrupt_enabler.h"
+    #include "user_mode.h"
+ 
 
 
     
@@ -58,5 +61,9 @@ int kmain(unsigned int ebx)
 	unsigned int *ptr = (unsigned int*)0xA0000000;
    	unsigned int do_page_fault = *ptr;*/
     	
+    	disable_hardware_interrupts();
+
+  	/* Switch to User mode */
+   	switch_to_user_mode();
 	return 0;
 }
